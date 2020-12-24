@@ -1,0 +1,29 @@
+﻿@{
+    @model ApplicationUser
+    ViewData["Title"] = "Profile";
+}
+<h1>Profile</h1>
+<div>
+    <div>
+        <br />
+        <h4>Your Personel Informations</h4>
+        <label> @Model.Email </label> <br />
+        <label> @Model.FirsName</label><br />
+        <label> @Model.LastName </label><br />
+    </div>
+    <div class="row">
+        <div class="col-md-4 ">
+            <br />
+            <h4>Courses You Create</h4>
+            <h5>@ViewBag.ownCourseCount</h5>
+        </div>
+        <div class="col-md-6">
+            <br />
+            <h4>Courses You Joined</h4>
+            <h5>@ViewBag.joinedCourseCount</h5>
+        </div>
+    </div>
+</div>
+  
+  
+

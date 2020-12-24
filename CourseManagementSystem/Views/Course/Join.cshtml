@@ -1,0 +1,26 @@
+﻿@model JoinCourseViewModel
+@{
+    ViewData["Title"] = "Join";
+}
+<h1>Join A Course</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form asp-controller="Course" asp-action="Join" id="course" method="post">
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Id"></label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Join</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="col-md-6 col-md-offset-2"></div>
+</div>

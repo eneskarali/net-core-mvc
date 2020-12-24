@@ -1,0 +1,31 @@
+﻿@model CreateCourseViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Create A New Course</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form asp-controller="Course" asp-action="Create" asp-route-id=@ViewBag.id id="course" method="post">
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="col-md-6 col-md-offset-2"></div>
+</div>

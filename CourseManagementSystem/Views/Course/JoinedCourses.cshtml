@@ -1,0 +1,25 @@
+﻿@model ApplicationUser
+@{ ViewData["Title"] = "Courses Your Joined"; }
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h4 style="margin: 0;">Courses Your Joined</h4>
+    <a class="btn btn-outline-primary btn-sm" asp-controller="Course" asp-action="Join">Join</a>
+</div>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Course s in Model.OwnCourses)
+        {
+<tr>
+    <td scope="row">@s.CourseId</td>
+    <td>@s.Name</td>
+    <td>@s.Description</td>
+</tr>
+}
+    </tbody>
+</table>

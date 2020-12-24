@@ -1,0 +1,38 @@
+﻿@model ApplicationUser
+@{ ViewData["Title"] = "Courses Your Created"; }
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h4 style="margin: 0;">Courses Your Created</h4>
+    <a class="btn btn-outline-primary btn-sm" asp-controller="Course" asp-action="Create" >New Course</a>
+    <form asp-controller="Course" asp-action="Search" method="post" asp-route-id="@Model.Id">
+        <h4>Search with course name</h4>
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div style="display:inline-block" class="form-group">
+            <label>Course Name</label>
+            <input type="text" name="data" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+</div>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Manage</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Course s in Model.OwnCourses)
+        {
+<tr>
+    <td scope="row">@s.CourseId</td>
+    <td>@s.Name</td>
+    <td>@s.Description</td>
+    <td><a class="text-primary mr-3" asp-controller="Course" asp-action="EditCourse" asp-route-id="@s.CourseId">Edit</a><a class="text-danger" asp-controller="Course" asp-action="Delete" asp-route-id="@s.CourseId">Delete</a></td>
+</tr>}
+    </tbody>
+</table>

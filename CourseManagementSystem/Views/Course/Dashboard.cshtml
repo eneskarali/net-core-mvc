@@ -1,0 +1,16 @@
+﻿@page
+@model CourseManagementSystem.Views.Course.DashboardModel
+@{
+}
+
+<div >
+    <h1 style="margin-top:20px">Choose what you want</h1>
+    <div class="justify-content-md-center">
+        <div  style="width:100%; display:flex; align-items:center; margin-top:150px;justify-content: center;">
+            <a  style="width:300px; height:80px; display: flex; align-items: center; justify-content: center;" type="submit" class="btn btn-outline-dark" asp-controller="Course" asp-action="Create">Create A New Course</a>
+        </div>
+        <div style="width:100%; display:flex; align-items:center; margin-top:10px;justify-content: center;">
+            <a style="width:300px; height:80px; display: flex; align-items: center; justify-content: center;" type="submit" class="btn btn-outline-dark" asp-controller="Course" asp-action="Join">Join A Course</a>
+        </div>
+    </div>
+</div>
